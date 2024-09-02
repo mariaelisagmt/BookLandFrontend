@@ -1,0 +1,59 @@
+<div class="flex flex-wrap">
+  <div class="w-full rounded-3xl bg-gray-800 p-6">
+    <div class="mb-8 flex items-center justify-between text-white">
+      <p class="text-2xl font-bold">Adicionar um livro</p>
+    </div>
+    <div class="w-full  bg-gray-800 px-6 pt-6">
+      <form [formGroup]="bookForm" (ngSubmit)="onSubmit()" class="w-50">
+        <div class="mb-4">
+          <label for="titulo" class="ml-4 mb-2 block text-sm font-medium text-gray-100">Título</label>
+          <input id="titulo" formControlName="titulo" type="text"
+            class="block w-full rounded-2xl bg-gray-500 py-1.5 pl-10 pr-4 leading-normal text-gray-400 opacity-90 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          <div *ngIf="bookForm.get('titulo')?.invalid && bookForm.get('titulo')?.touched"
+            class="text-red-600 text-sm mt-1">
+            O título é obrigatório
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <label for="autor" class="ml-4 mb-2 block text-sm font-medium text-gray-100">Autor</label>
+          <input id="autor" formControlName="autor" type="text"
+            class="block w-full rounded-2xl bg-gray-500 py-1.5 pl-10 pr-4 leading-normal text-gray-400 opacity-90 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          <div *ngIf="bookForm.get('autor')?.invalid && bookForm.get('autor')?.touched"
+            class="text-red-600 text-sm mt-1">
+            O autor é obrigatório
+          </div>
+        </div>
+        <div class="flex justify-between">
+          <div class="mb-4 w-2/6 mr-5">
+            <label for="pagina" class="ml-4 mb-2 block text-sm font-medium text-gray-100">Quantidade Paginas</label>
+            <input id="pagina" formControlName="pagina" type="text"
+              class="block w-full rounded-2xl bg-gray-500 py-1.5 pl-10 pr-4 leading-normal text-gray-400 opacity-90 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            <div *ngIf="bookForm.get('pagina')?.invalid && bookForm.get('pagina')?.touched"
+              class="text-red-600 text-sm mt-1">
+              A quantidade de páginas é obrigatória
+            </div>
+          </div>
+          <div class="mb-4 w-2/6 mr-5">
+            <label for="dataInicio" class="ml-4 mb-2 block text-sm font-medium text-gray-100">Data de Inicio</label>
+            <input id="dataInicio" type="date" formControlName="dataInicio"
+              class="block w-full rounded-2xl bg-gray-500 py-1.5 pl-10 pr-4 leading-normal text-gray-400 opacity-90 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500 " />
+            <div *ngIf="bookForm.get('dataInicio')?.invalid && bookForm.get('dataInicio')?.touched"
+              class="text-red-600 text-sm mt-1">
+              A data de Inicio é obrigatória
+            </div>
+          </div>
+          <div class="mb-4 w-2/6">
+            <label for="dataFim" class="ml-4 mb-2 block text-sm font-medium text-gray-100">Data de Fim</label>
+            <input id="dataFim" type="date" formControlName="dataFim"
+              class="block w-full rounded-2xl bg-gray-500 py-1.5 pl-10 pr-4 leading-normal text-gray-400 opacity-90 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500 " />
+          </div>
+        </div>
+        <button type="submit" [disabled]="bookForm.invalid"
+          class="px-4 py-2 bg-green-500 text-white font-semibold rounded-md shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-600">
+          Salvar
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
