@@ -1,6 +1,4 @@
 # BOOKLAND
-
-## Definição
 Permite gerenciar os seus livros lidos.
 
 ## Objetivo
@@ -11,8 +9,8 @@ Aplicação criada para a disciplina de container da especialização de engenha
 - Angular
 - Tailwind
 
-## Contribution
-Maria Elisa Gomes
-George Ferreira
-Felipe
-Authur
+## Time
+- Maria Elisa Gomes
+- George Ferreira
+- Felipe
+- Authur
