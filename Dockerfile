@@ -15,13 +15,13 @@ RUN npm install
 COPY . .
 
 # Construir o projeto Angular
-RUN npm run build -- --prod
+RUN npm run build -- --configuration production
 
 # Etapa 2: Configurar o ambiente de execução
 FROM nginx:alpine
 
 # Copiar os arquivos de build para o diretório do Nginx
-COPY --from=builder /app/dist/your-project-name /usr/share/nginx/html
+COPY --from=builder /app/dist/my-app /usr/share/nginx/html
 
 # Expor a porta padrão do Nginx
 EXPOSE 80
