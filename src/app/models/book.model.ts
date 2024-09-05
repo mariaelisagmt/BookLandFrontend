@@ -1,7 +1,10 @@
 export interface Book {
+    id:number;
     titulo: string;
+    imagem: string;
+    nome: string;
     autor: string;
-    pagina: number;
+    paginas: number;
     dataInicio: string;
     dataFim: string;
   }

@@ -16,16 +16,21 @@ export class BookFormComponent {
     this.bookForm = this.fb.group({
       titulo: ['', Validators.required],
       autor: ['', Validators.required],
-      pagina: ['', [Validators.required, Validators.pattern(/^\d{0-9}$/)]],
-      dataInicio: ['', Validators.required]
+      paginas: ['', Validators.required],
+      dataInicio: ['', Validators.required],
+      dataFim: ['', Validators.required]
     });
   }
 
   onSubmit(): void {
     if (this.bookForm.valid) {
       const newBook: Book = this.bookForm.value;
-      this.bookService.addBook(newBook);
-      this.bookForm.reset();
+      this.bookService.addBook(newBook).subscribe(response => {
+        console.log('Book added successfully', response);
+        this.bookForm.reset();
+      }, error => {
+        console.error('Error adding book', error);
+      });
     }
   }
 }

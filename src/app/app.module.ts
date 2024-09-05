@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { BookService } from './services/book.service'; 
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,6 +31,7 @@ import { ContentComponent } from './components/content/content.component';
 import { SnippetComponent } from './components/docs/snippet/snippet.component';
 import { FolderIconComponent } from './components/docs/icons/folder-icon/folder-icon.component';
 import { AngularIconComponent } from './components/docs/icons/angular-icon/angular-icon.component';
+import { BookItemComponent } from './book-item/book-item.component';
 
 @NgModule({
   declarations: [
@@ -58,9 +61,10 @@ import { AngularIconComponent } from './components/docs/icons/angular-icon/angul
     ContentComponent,
     FolderIconComponent,
     AngularIconComponent,
+    BookItemComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
-  providers: [],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, HttpClientModule],
+  providers: [BookService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

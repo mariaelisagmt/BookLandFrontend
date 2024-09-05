@@ -1,0 +1,39 @@
+<div class="w-full bg-gray-800 px-6 pt-6">
+    <div>
+      <div class="flex w-full border-t border-gray-700 p-4 hover:bg-gray-700 2xl:items-start">
+        <img
+          [src]="book?.imagem || '../../../assets/images/capa1.png'"
+          alt="book cover" class="h-15 w-20 object-cover" />
+        <div class="w-full pl-4">
+          <div class="flex w-full items-center justify-between">
+            <div class="font-medium text-white">{{ book?.titulo || 'Titulo' }}</div>
+            <div class="flex w-1/6 items-center justify-center">
+              <!-- Add your SVG icons here -->
+              <button (click)="deleteBook()">
+              <div class="flex h-7 w-7 ml-5 cursor-pointer items-center justify-center">
+                  <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                      <path fill="#ffffff"
+                      d="M352 192V95.936a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32V192h256a32 32 0 1 1 0 64H96a32 32 0 0 1 0-64h256zm64 0h192v-64H416v64zM192 960a32 32 0 0 1-32-32V256h704v672a32 32 0 0 1-32 32H192zm224-192a32 32 0 0 0 32-32V416a32 32 0 0 0-64 0v320a32 32 0 0 0 32 32zm192 0a32 32 0 0 0 32-32V416a32 32 0 0 0-64 0v320a32 32 0 0 0 32 32z">
+                    </path>
+                  </g>
+                </svg>
+              </div>
+            </button>
+        </div>
+      </div>
+          <p class="my-2 text-sm text-gray-400">
+            Autor: {{ book?.autor || 'Autor' }}
+          </p>
+          <p class="my-2 text-sm text-gray-400">
+            Pagina: {{ book?.paginas || 'Paginas' }}
+          </p>
+          <p class="text-right text-sm text-gray-400">{{ book?.dataInicio?.substring(0,10) }}</p>
+          <p class="text-right text-sm text-gray-400">{{ book?.dataFim?.substring(0,10) || 'Não finalizado'}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
